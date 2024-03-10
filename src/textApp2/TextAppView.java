@@ -14,6 +14,7 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
+import javax.swing.JScrollPane;
 
 public class TextAppView extends JFrame {
 	
@@ -26,6 +27,7 @@ public class TextAppView extends JFrame {
 	JTextArea textArea = new JTextArea();
 	private TextAppController controller = new TextAppController(this);
 	JButton deleteButton = new JButton("Delete");
+	private final JScrollPane scrollPane = new JScrollPane();
 
 	/**
 	 * Launch the application.
@@ -61,8 +63,6 @@ public class TextAppView extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 0));
 		
-		contentPane.add(textArea, BorderLayout.CENTER);
-		
 		JPanel panel = new JPanel();
 		contentPane.add(panel, BorderLayout.SOUTH);
 		
@@ -80,5 +80,8 @@ public class TextAppView extends JFrame {
 		panel.add(saveAsButton);
 		
 		panel.add(deleteButton);
+		
+		contentPane.add(scrollPane, BorderLayout.CENTER);
+		scrollPane.setViewportView(textArea);
 	}
 }
