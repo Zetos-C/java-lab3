@@ -56,12 +56,17 @@ public class TextAppController implements ActionListener {
 				saveFile(fileChooseNew.getSelectedFile());
 			}
 		} else if (e.getSource() == view.deleteButton) {
-
-			if (view.fileChoose.getSelectedFile().delete()) {
-				JOptionPane.showMessageDialog(view, "Xoa file thanh cong");
-				view.fileChoose.setSelectedFile(null);
-				view.textArea.setText("");
+			if(view.fileChoose.getSelectedFile() != null) {
+				if (view.fileChoose.getSelectedFile().delete()) {
+					JOptionPane.showMessageDialog(view, "Xoa file thanh cong");
+					view.fileChoose.setSelectedFile(null);
+					view.textArea.setText("");
+				}
 			}
+			else {
+				JOptionPane.showMessageDialog(view, "Chua chon file de xoa");
+			}
+
 		}
 	}
 
