@@ -51,7 +51,8 @@ public class TextAppController implements ActionListener {
 				saveFile(view.fileChoose.getSelectedFile());
 			}
 		} else if (e.getSource() == view.saveAsButton) {
-			JFileChooser fileChooseNew = new JFileChooser(view.fileChoose.getSelectedFile().getPath());
+			JFileChooser fileChooseNew = new JFileChooser();
+			
 			int option = fileChooseNew.showSaveDialog(view);
 			if (option == JFileChooser.APPROVE_OPTION) {
 				saveFile(fileChooseNew.getSelectedFile());
