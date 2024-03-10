@@ -74,8 +74,8 @@ public class TextAppController implements ActionListener {
 			fos.close();
 			JOptionPane.showMessageDialog(view, "Luu thanh cong");
 		} catch (Exception e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
+			JOptionPane.showMessageDialog(view, "Luu khong thanh cong");
 		}
 	}
 
